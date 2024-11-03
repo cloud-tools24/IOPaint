@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  lama-cleaner-cpu:
+    build:
+      context: .
+      dockerfile: ./docker/CPUDockerfile
+      args:
+        version: ${GIT_TAG}
+      labels:
+        org.opencontainers.image.title: "lama-cleaner"
+        org.opencontainers.image.description: "Image inpainting tool powered by SOTA AI Model"
+        org.opencontainers.image.url: "https://github.com/cloud-tools24/IOPaint"
+        org.opencontainers.image.source: "https://github.com/cloud-tools24/IOPaint"
+        org.opencontainers.image.version: ${GIT_TAG}
+    image: cloud-tools/lama-cleaner:cpu-${GIT_TAG}
+    networks:
+      - imaging
+    ports:
+      - 9067:9067
+    command: ["iopaint", "start", "--model=lama", "--device=cpu", "--port=9067"]
+
+
+  lama-cleaner-gpu:
+    build:
+      context: .
+      dockerfile: ./docker/GPUDockerfile
+      args:
+        version: ${GIT_TAG}
+      labels:
+        org.opencontainers.image.title: "lama-cleaner"
+        org.opencontainers.image.description: "Image inpainting tool powered by SOTA AI Model"
+        org.opencontainers.image.url: "https://github.com/cloud-tools24/IOPaint"
+        org.opencontainers.image.source: "https://github.com/cloud-tools24/IOPaint"
+        org.opencontainers.image.version: ${GIT_TAG}
+    image: cloud-tools/lama-cleaner:gpu-${GIT_TAG}
+    networks:
+      - imaging
+    ports:
+      - 9067:9067
+
+networks:
+  imaging:
