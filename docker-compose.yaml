@@ -15,7 +15,7 @@ services:
         org.opencontainers.image.version: ${GIT_TAG}
     image: cloud-tools/lama-cleaner:cpu-${GIT_TAG}
     networks:
-      - imaging
+      - network
     ports:
       - 9067:9067
     command: ["iopaint", "start", "--model=lama", "--device=cpu", "--port=9067"]
@@ -35,9 +35,9 @@ services:
         org.opencontainers.image.version: ${GIT_TAG}
     image: cloud-tools/lama-cleaner:gpu-${GIT_TAG}
     networks:
-      - imaging
+      - network
     ports:
       - 9067:9067
 
 networks:
-  imaging:
+  network:
