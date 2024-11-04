@@ -15,11 +15,10 @@ services:
         org.opencontainers.image.version: ${GIT_TAG}
     image: cloud-tools/lama-cleaner:cpu-${GIT_TAG}
     networks:
-      - network
+      - iopaint
     ports:
       - 9067:9067
-    command: ["iopaint", "start", "--model=lama", "--device=cpu", "--port=9067"]
-
+    command: ["iopaint", "start", "--model=lama", "--device=cpu", "--port=9067", "--host=0.0.0.0"]
 
   lama-cleaner-gpu:
     build:
@@ -35,9 +34,11 @@ services:
         org.opencontainers.image.version: ${GIT_TAG}
     image: cloud-tools/lama-cleaner:gpu-${GIT_TAG}
     networks:
-      - network
+      - iopaint
     ports:
       - 9067:9067
 
 networks:
-  network:
+  iopaint:
+    name: iopaint
+    driver: bridge
