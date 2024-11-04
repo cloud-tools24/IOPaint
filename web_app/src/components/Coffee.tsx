@@ -13,14 +13,14 @@ export function Coffee() {
         </IconButton>
       </DialogTrigger>
       <DialogContent>
-        <DialogTitle>Buy me a coffee</DialogTitle>
+        <DialogTitle>Buy me a cup of coffee</DialogTitle>
         <DialogDescription className="mb-8">
           Hi, if you found my project is useful, please conside buy me a coffee
           to support my work. Thanks!
         </DialogDescription>
         <div className="w-full flex items-center justify-center">
           <a
-            href="https://ko-fi.com/Z8Z1CZJGY"
+            href="https://ko-fi.com/cloudtoolstechnologies"
             target="_blank"
             rel="noreferrer"
           >
