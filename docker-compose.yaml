@@ -16,6 +16,8 @@ services:
     image: cloud-tools/lama-cleaner:cpu-${GIT_TAG}
     networks:
       - iopaint
+    volumes:
+      - model_cache:/root/.cache
     ports:
       - 9067:9067
     command: ["iopaint", "start", "--model=lama", "--device=cpu", "--port=9067", "--host=0.0.0.0"]
@@ -42,3 +44,6 @@ networks:
   iopaint:
     name: iopaint
     driver: bridge
+
+volumes:
+  model_cache:
