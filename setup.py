@@ -27,7 +27,7 @@ def load_requirements():
 
 # https://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files
 setuptools.setup(
-    name="IOPaint-cloudtools",
+    name="IOPaint",
     version="1.5.0",
     author="PanicByte",
     author_email="cwq1913@gmail.com",
