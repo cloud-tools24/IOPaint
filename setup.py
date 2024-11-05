@@ -27,14 +27,14 @@ def load_requirements():
 
 # https://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files
 setuptools.setup(
-    name="IOPaint",
+    name="IOPaint-cloudtools",
     version="1.5.0",
     author="PanicByte",
     author_email="cwq1913@gmail.com",
     description="Image inpainting, outpainting tool powered by SOTA AI Model",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Sanster/IOPaint",
+    url="https://github.com/cloud-tools24/IOPaint",
     packages=setuptools.find_packages("."),
     package_data={"iopaint": package_files},
     install_requires=load_requirements(),
