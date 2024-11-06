@@ -1,3 +1,12 @@
+## Notes
+To change the web, try dev it in the web_app folder , and then run:
+```bash
+npm install
+npm run build
+cp -r dist/ ../iopaint/web_app
+```
+Then add that compiled html to the repo and redeploy with docker comopse. Later, you should change this by copying the the entire folder to the docker and run. But for now, let's make a tag, then update docker file to use that tag and then run docker compose.
+
 <h1 align="center">IOPaint</h1>
 <p align="center">A free and open-source inpainting & outpainting tool powered by SOTA AI model.</p>
 
