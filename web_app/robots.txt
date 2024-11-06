@@ -1,0 +1,19 @@
+# Block all crawlers from accessing private or admin directories
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all crawlers to access the rest of the website
+User-agent: *
+Disallow:
+
+# Allow Googlebot to crawl everything
+User-agent: Googlebot
+Disallow:
+
+# Add crawl delay for all bots (to avoid overloading the server)
+User-agent: *
+Crawl-delay: 10
+
+# Specify the location of the sitemap
+Sitemap: https://inpainting.cloud-tools.us/sitemap.xml
